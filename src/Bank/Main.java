@@ -28,7 +28,32 @@ public final class Main {
             int index = (scanner.nextInt());
             BankMenu selectedMenu = BankMenu.values()[index - 1];
 
-            if (index == 6) { System.out.println("종료 되었습니다.");  break; }
+            switch (selectedMenu) {
+                case RESIST_CUSTOMER:
+                    resistCustomer();
+                case RESIST_ACCOUNT:
+
+                case DEPOSIT:
+
+                case WITHDRAW:
+
+                case INQUIRY_BALANCE:
+
+                case EXIT:
+                    System.out.println("종료 되었습니다.");
+                    break;
+            }
         }
+    }
+
+    private void resistCustomer() {
+        System.out.println("=== 고객 등록 페이지 입니다. ===");
+
+        System.out.print("원하시는 아이디를 입력해주세요: ");
+        String customerId = scanner.next();
+        System.out.println();
+        String name = scanner.next();
+
+        bank.registCustomer(name, customerId);
     }
 }

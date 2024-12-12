@@ -1,7 +1,6 @@
 package Bank;
 
 public class KookminBankAccount extends Account {
-    static final String bankName = "국민은행";
 
     public KookminBankAccount(
             String customerId,

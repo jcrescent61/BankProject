@@ -1,13 +1,15 @@
 package Bank;
 
-public final class Customer {
-    int id;
-    String name;
-    KookminBankAccount[] accounts;
+import java.util.HashMap;
 
-    public Customer(int id, String name, KookminBankAccount[] accounts) {
+public final class Customer {
+    private String id;
+    private String name;
+    private HashMap<Bank, Account> accounts;
+
+    public Customer(String id, String name, Account account) {
         this.id = id;
         this.name = name;
-        this.accounts = accounts;
+        this.accounts = new HashMap<Bank, Account>();
     }
 }
