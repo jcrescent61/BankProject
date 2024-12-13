@@ -15,4 +15,16 @@ public final class Customer {
     public void receiveAccount(Bank bank, Account account) {
         accounts.put(bank, account);
     }
+
+    public Account getAccount(Bank bank) {
+        return accounts.get(bank);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getId() {
+        return id;
+    }
 }

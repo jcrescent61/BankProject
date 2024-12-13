@@ -27,6 +27,8 @@ public final class Main {
             int index = (scanner.nextInt());
             BankMenu selectedMenu = BankMenu.values()[index - 1];
             detectMenu(selectedMenu);
+
+            System.out.println("\n\n\n");
         }
     }
 

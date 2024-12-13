@@ -10,31 +10,37 @@ public class HanaBank implements Bankable {
 
     @Override
     public void registCustomer() {
-
+        System.out.println("=== 고객 등록 페이지 입니다. ===");
+        System.out.println("=== 은행 문 안 열었어요. ===");
     }
 
     @Override
     public void registAccount() {
-
+        System.out.println("=== 계좌 생성 페이지 입니다. ===");
+        System.out.println("=== 은행 문 안 열었어요. ===");
     }
 
     @Override
     public void deposit() {
-
+        System.out.println("=== 입금 페이지 입니다. ===");
+        System.out.println("=== 은행 문 안 열었어요. ===");
     }
 
     @Override
     public void withdraw() {
-
+        System.out.println("=== 출금 페이지 입니다. ===");
+        System.out.println("=== 은행 문 안 열었어요. ===");
     }
 
     @Override
     public void inquiryBalance() {
-
+        System.out.println("=== 잔액 조회 페이지 입니다. ===");
+        System.out.println("=== 은행 문 안 열었어요. ===");
     }
 
     @Override
     public void inquiryCustomer() {
-
+        System.out.println("=== 고객 정보 조회 페이지 입니다. ===");
+        System.out.println("=== 은행 문 안 열었어요. ===");
     }
 }
