@@ -1,40 +1,26 @@
 package Bank;
 
 public enum BankMenu {
-    RESIST_CUSTOMER,
-    RESIST_ACCOUNT,
-    DEPOSIT,
-    WITHDRAW,
-    INQUIRY_BALANCE,
-    EXIT;
+    RESIST_CUSTOMER(1, "1. 고객 등록"),
+    RESIST_ACCOUNT(2, "2. 계좌 생성"),
+    DEPOSIT(3, "3. 입금"),
+    WITHDRAW(4, "4. 출금"),
+    INQUIRY_BALANCE(5, "5. 잔액 조회"),
+    EXIT(6, "6. 종료");
+
+    private final int index;
+    private final String menuText;
+
+    BankMenu(int index, String menuText) {
+        this.index = index;
+        this.menuText = menuText;
+    }
 
     public int asIndex() {
-        int index = 0;
-
-        switch (this) {
-            case RESIST_CUSTOMER -> index = 1;
-            case RESIST_ACCOUNT -> index = 2;
-            case DEPOSIT -> index = 3;
-            case WITHDRAW -> index = 4;
-            case INQUIRY_BALANCE -> index = 5;
-            case EXIT -> index = 6;
-        }
-
         return index;
     }
 
     public String asMenuText() {
-        String text = "";
-
-        switch (this) {
-            case RESIST_CUSTOMER -> text = "1. 고객 등록";
-            case RESIST_ACCOUNT -> text = "2. 계좌 생성";
-            case DEPOSIT -> text = "3. 입금";
-            case WITHDRAW -> text = "4. 출금";
-            case INQUIRY_BALANCE -> text = "5. 잔액 조회";
-            case EXIT -> text = "6. 종료";
-        }
-
-        return text;
+        return menuText;
     }
 }

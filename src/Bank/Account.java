@@ -1,10 +1,10 @@
 package Bank;
 
 public abstract class Account {
-    private String bankName = "";
-    private String customerId = "";
-    private int accountNumber = 0;
-    private int balance = 0;
+    private Bank bank;
+    private String customerId;
+    private String accountNumber;
+    private int balance;
 
     public int inquiryBalance() {
         return balance;

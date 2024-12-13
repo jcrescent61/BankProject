@@ -5,11 +5,14 @@ import java.util.HashMap;
 public final class Customer {
     private String id;
     private String name;
-    private HashMap<Bank, Account> accounts;
+    private HashMap<Bank, Account> accounts = new HashMap<>();
 
-    public Customer(String id, String name, Account account) {
+    public Customer(String id, String name) {
         this.id = id;
         this.name = name;
-        this.accounts = new HashMap<Bank, Account>();
+    }
+
+    public void receiveAccount(Bank bank, Account account) {
+        accounts.put(bank, account);
     }
 }
