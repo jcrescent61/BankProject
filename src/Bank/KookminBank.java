@@ -72,7 +72,7 @@ public class KookminBank implements Bankable {
     @Override
     public void deposit() {
         System.out.println("=== 입금 페이지 입니다. ===");
-        System.out.print("계좌 번호를 알려주세요.: ");
+        System.out.print("계좌 번호를 입력해 주세요.: ");
         String accountNumber = scanner.next();
 
         if (accountNumbersDataBase.containsKey(accountNumber)) {
@@ -97,16 +97,46 @@ public class KookminBank implements Bankable {
 
     @Override
     public void withdraw() {
+        System.out.println("=== 출금 페이지 입니다. ===");
+        System.out.print("계좌 번호를 입력해 주세요.: ");
+        String accountNumber = scanner.next();
 
+        if (accountNumbersDataBase.containsKey(accountNumber)) {
+            Customer currentCustomer = customerDataBase.get(accountNumbersDataBase.get(accountNumber));
+            Account tempAccount = currentCustomer.getAccount(bank);
+
+            System.out.println("현재 잔액: " + currentCustomer.getAccount(bank).inquiryBalance());
+            System.out.print("출금 금액을 입력해 주세요.: ");
+
+            int withdrawMoney = scanner.nextInt();
+
+            tempAccount.withdrawal(withdrawMoney);
+            currentCustomer.receiveAccount(bank, tempAccount);
+
+            System.out.println("=== " + withdrawMoney + "원이 출금 되었습니다. ===");
+            System.out.println(
+                    "잔액: " + currentCustomer.getAccount(bank).inquiryBalance());
+        } else {
+            System.out.println("=== 존재하지 않는 계좌 번호 입니다. ===");
+        }
     }
 
     @Override
     public void inquiryBalance() {
+        System.out.println("=== 잔액 조회 페이지 입니다. ===");
+        System.out.print("계좌 번호를 입력해 주세요.: ");
+        String accountNumber = scanner.next();
 
-    }
+        if (accountNumbersDataBase.containsKey(accountNumber)) {
+            Customer currentCustomer = customerDataBase.get(accountNumbersDataBase.get(accountNumber));
+            Account tempAccount = currentCustomer.getAccount(bank);
 
-    @Override
-    public void inquiryCustomer() {
-
+            System.out.println("고객 아이디: " + currentCustomer.getId());
+            System.out.println("고객 이름: " + currentCustomer.getName());
+            System.out.println("거래 은행: " + bank.asName());
+            System.out.println("잔액: " + currentCustomer.getAccount(bank).inquiryBalance());
+        } else {
+            System.out.println("=== 존재하지 않는 계좌 번호 입니다. ===");
+        }
     }
 }

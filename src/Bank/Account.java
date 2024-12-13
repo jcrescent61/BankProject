@@ -12,7 +12,7 @@ public abstract class Account {
     public void deposit(int depositMoney) {
         balance += depositMoney;
     }
-    public void withdrawal(int balance) {
-        balance -= balance;
+    public void withdrawal(int withdrawalMoney) {
+        balance -= withdrawalMoney;
     }
 }

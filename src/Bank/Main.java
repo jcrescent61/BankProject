@@ -1,5 +1,6 @@
 package Bank;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public final class Main {
@@ -24,9 +25,18 @@ public final class Main {
             }
 
             System.out.print("입력해 주세요: ");
-            int index = (scanner.nextInt());
-            BankMenu selectedMenu = BankMenu.values()[index - 1];
-            detectMenu(selectedMenu);
+
+            try {
+                int index = (scanner.nextInt());
+                BankMenu selectedMenu = BankMenu.values()[index - 1];
+                detectMenu(selectedMenu);
+            } catch (InputMismatchException e) {
+                System.out.println("=== 숫자를 입력해 주세요. ===");
+                scanner.nextLine();
+            } catch (IndexOutOfBoundsException e) {
+                System.out.println("=== 잘못된 번호를 입력하셨습니다. ===");
+                scanner.nextLine();
+            }
 
             System.out.println("\n\n\n");
         }

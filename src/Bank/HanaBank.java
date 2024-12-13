@@ -37,10 +37,4 @@ public class HanaBank implements Bankable {
         System.out.println("=== 잔액 조회 페이지 입니다. ===");
         System.out.println("=== 은행 문 안 열었어요. ===");
     }
-
-    @Override
-    public void inquiryCustomer() {
-        System.out.println("=== 고객 정보 조회 페이지 입니다. ===");
-        System.out.println("=== 은행 문 안 열었어요. ===");
-    }
 }

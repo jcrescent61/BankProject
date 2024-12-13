@@ -7,5 +7,4 @@ public interface Bankable {
     public void deposit();
     public void withdraw();
     public void inquiryBalance();
-    public void inquiryCustomer();
 }
